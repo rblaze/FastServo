@@ -1,5 +1,5 @@
 /* mbed R/C Servo Library
- *  
+ *
  * Copyright (c) 2007-2010 sford, cstyles
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20,14 +20,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
- 
+
 #include "FastServo.h"
 #include "mbed.h"
 
 static float clamp(float value, float min, float max) {
-    if(value < min) {
+    if (value < min) {
         return min;
-    } else if(value > max) {
+    } else if (value > max) {
         return max;
     } else {
         return value;
@@ -59,12 +59,12 @@ float FastServo::read() {
     return _p;
 }
 
-FastServo& FastServo::operator= (float percent) { 
+FastServo& FastServo::operator=(float percent) {
     write(percent);
     return *this;
 }
 
-FastServo& FastServo::operator= (FastServo& rhs) {
+FastServo& FastServo::operator=(FastServo& rhs) {
     write(rhs.read());
     return *this;
 }
